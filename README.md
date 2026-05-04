@@ -1,7 +1,7 @@
 # win32_collector
 
 A single-binary Windows forensic artifact collector for IR triage. Walks 51
-artifact sources — registry, WMI, filesystem, raw NTFS — and dumps everything
+artifact sources, registry, WMI, filesystem, raw NTFS, and dumps everything
 as CSV.
 
 Built in C against the Win32 API. No dependencies, no installer, no PowerShell
@@ -21,7 +21,7 @@ This is what I wanted instead. One binary, one run, one folder of CSVs.
 
 - 51 artifact collectors covering processes, persistence, execution evidence,
   filesystem, network, browsers, users, and system state
-- Raw NTFS parsers for `$MFT`, `$LogFile`, and the USN Journal — bypasses the
+- Raw NTFS parsers for `$MFT`, `$LogFile`, and the USN Journal ,  bypasses the
   filesystem API entirely, reads volume blocks directly
 - Timestomping detection on the MFT (SI vs FN time skew, 7-day window, skips
   NTFS metadata files to keep false positives sane)
@@ -30,7 +30,7 @@ This is what I wanted instead. One binary, one run, one folder of CSVs.
 - IFEO hijack detection (Sticky Keys, Utilman, etc.)
 - Output to stdout, CSV files, or both
 - `--quick` mode for tight time windows (caps MFT/USN at 50K records)
-- Progress on stderr — you can tail it without polluting `--ui` output
+- Progress on stderr ,  you can tail it without polluting `--ui` output
 
 ## Build
 
@@ -153,12 +153,12 @@ to merge collections from multiple hosts after a sweep.
 ## Notes / caveats
 
 - `MFT` and `UsnJrnl_Full` are slow on large volumes. Use `--quick` if you're
-  on a tight time budget — the first 50K USN records and 50K MFT entries
+  on a tight time budget ,  the first 50K USN records and 50K MFT entries
   cover most of what triage actually needs.
-- `LogFile` does shallow parsing only — restart-area validation and RCRD
+- `LogFile` does shallow parsing only ,  restart-area validation and RCRD
   page count. Full transaction parsing is on the roadmap; until then, pair
   with [LogFileParser](https://github.com/jschicht/LogFileParser).
-- `ShimCache` and `UserAssist` dump locations only — the binary blobs need
+- `ShimCache` and `UserAssist` dump locations only ,  the binary blobs need
   offline parsing.
 - Browser history collectors enumerate the SQLite DBs but don't parse them
   (Chrome/Edge lock the file while running). Copy and parse offline.
@@ -177,11 +177,11 @@ to merge collections from multiple hosts after a sweep.
 
 ## License
 
-MIT — see `LICENSE`.
+MIT ,  see `LICENSE`.
 
 Use it. Modify it. Don't expect warranty. Don't use it on systems you don't
 own or aren't authorized to assess.
 
 ## Author
 
-[@darksys0x](https://github.com/darksys0x) — [darksys0x.net](https://darksys0x.net)
+[@darksys0x](https://github.com/darksys0x) ,  [darksys0x.net](https://darksys0x.net)
