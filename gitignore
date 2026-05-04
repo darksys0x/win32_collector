@@ -1,0 +1,46 @@
+# Build output
+x64/
+x86/
+Win32/
+Debug/
+Release/
+build/
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
+*.vcxproj.user
+*.opendb
+*.VC.db
+*.VC.opendb
+
+# Compiled / linker artifacts
+*.obj
+*.o
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.idb
+*.tlog
+*.lastbuildstate
+*.unsuccessfulbuild
+*.log
+
+# IDE / editor noise
+.vscode/
+*.swp
+*.swo
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
